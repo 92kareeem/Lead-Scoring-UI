@@ -16,11 +16,11 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import classification_report, confusion_matrix
 
 # Load dataset
-import pickle
-
 @st.cache_data
 def load_data():
-    return pickle.load(open("lead_scoring.pkl", "rb"))
+    url = "https://raw.githubusercontent.com/92kareeem/Lead-Scoring-UI/main/lead_scoring.csv"
+    return pd.read_csv(url)
+
 
 df = load_data()
 
